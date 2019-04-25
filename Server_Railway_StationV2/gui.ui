@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Gui</class>
+ <widget class="QMainWindow" name="Gui">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>494</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Консоль сервера</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/resourse/train.ico</normalon>
+   </iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <widget class="QDateTimeEdit" name="DateTime">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="currentSection">
+       <enum>QDateTimeEdit::DaySection</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="Flights">
+       <attribute name="title">
+        <string>Рейсы</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QTableView" name="Database_Flight">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::EditKeyPressed</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="AddFlight">
+            <property name="text">
+             <string>Добавить Рейс</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="EditFlight">
+            <property name="text">
+             <string>Редактировать Рейс</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="DeleteFlight">
+            <property name="text">
+             <string>Удалить Рейс</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Connect">
+            <property name="text">
+             <string>Назначение вагонов</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Carriage">
+       <attribute name="title">
+        <string>Вагоны</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QTableView" name="Database_carriage">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::EditKeyPressed</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QPushButton" name="AddCarriage">
+            <property name="text">
+             <string>Добавить вагон</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="EditCarriage">
+            <property name="text">
+             <string>Редактировать вагон</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="DeleteCarriage">
+            <property name="text">
+             <string>Удалить вагон</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Users">
+       <attribute name="title">
+        <string>Пользователи</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QTableView" name="Database_Users">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::EditKeyPressed</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QPushButton" name="AddUser">
+            <property name="text">
+             <string>Добавить пользователя</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="EditUser">
+            <property name="text">
+             <string>Редактировать пользователя</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="DeleteUser">
+            <property name="text">
+             <string>Удалить пользователя</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QTabWidget" name="Settings">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="Flight_settings">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="title">
+          <string>Настройка рейса</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="Finish_flight">
+            <property name="placeholderText">
+             <string>Пункт назначения</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QPushButton" name="add_filght">
+              <property name="text">
+               <string>Добавить</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Update_flight">
+              <property name="text">
+               <string>Обновить данные</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="4" rowspan="5">
+           <layout class="QFormLayout" name="Day_of">
+            <item row="0" column="1">
+             <widget class="QCheckBox" name="Thirsday">
+              <property name="text">
+               <string>Вторник</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="Wensday">
+              <property name="text">
+               <string>Среда</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="Friday">
+              <property name="text">
+               <string>Пятница</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QCheckBox" name="Saturday">
+              <property name="text">
+               <string>Суббота</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="Sunday">
+              <property name="text">
+               <string>Воскресенье</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="Monday">
+              <property name="text">
+               <string>Понедельник</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QCheckBox" name="Thursday">
+              <property name="text">
+               <string>Четверг</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLineEdit" name="Number_flight">
+            <property name="placeholderText">
+             <string>Номер рейса</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QTimeEdit" name="Time_flight"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="Start_flight">
+            <property name="placeholderText">
+             <string>Пункт отправления</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QPushButton" name="Cancel_flight">
+            <property name="text">
+             <string>Отмена</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="Carriage_settings">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="title">
+          <string>Настройка вагона</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetNoConstraint</enum>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLineEdit" name="Number_carriage">
+            <property name="placeholderText">
+             <string>Номер вагона</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="Type_carriage">
+            <item>
+             <property name="text">
+              <string>Плацкарт</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Купе</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Бизнес</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Ресторан</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="Place_carriage">
+            <property name="sizeIncrement">
+             <size>
+              <width>46</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Количество мест</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="Value">
+            <property name="placeholderText">
+             <string>Стоимость поездки</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="Cancel_carriage">
+            <property name="text">
+             <string>Отмена</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QPushButton" name="Add_carriage">
+              <property name="text">
+               <string>Добавить</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Update_carriage">
+              <property name="text">
+               <string>Обновить данные</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="User_settings">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="title">
+          <string>Настройка данных пользователя</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="1" column="2">
+           <widget class="QComboBox" name="Role_user">
+            <item>
+             <property name="text">
+              <string>Пассажир</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Кассир</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Админ</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="Password_user">
+            <property name="placeholderText">
+             <string>Пароль</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="Name">
+            <property name="placeholderText">
+             <string>Имя пользователя</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="Last_name">
+            <property name="placeholderText">
+             <string>Отчество пользователя</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QPushButton" name="Cancel_user">
+            <property name="text">
+             <string>Отмена</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLineEdit" name="First_name">
+            <property name="placeholderText">
+             <string>Фамилия пользователя</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="Login_user">
+            <property name="placeholderText">
+             <string>Логин</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QPushButton" name="Add_User">
+              <property name="text">
+               <string>Добавить</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Update_user">
+              <property name="text">
+               <string>Обновить данные</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="Carriage_toFlight_settings">
+         <attribute name="title">
+          <string>Присоединение вагонов</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="2" column="2">
+           <widget class="QTableView" name="Carriage_no_Flight">
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContents</enum>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::EditKeyPressed</set>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QPushButton" name="Close">
+            <property name="text">
+             <string>Закончить</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QTableView" name="Carriage_on_Flight">
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContents</enum>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::EditKeyPressed</set>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QPushButton" name="add">
+              <property name="text">
+               <string>&lt;&lt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="remove">
+              <property name="text">
+               <string>&gt;&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QComboBox" name="Days"/>
+            </item>
+            <item>
+             <widget class="QDateEdit" name="Date_of_Flight">
+              <property name="frame">
+               <bool>false</bool>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+              <property name="keyboardTracking">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="lwLog"/>
+      </item>
+     </layout>
+    </item>
+    <item row="4" column="0">
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="Host">
+         <property name="text">
+          <string>127.0.0.1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="Port">
+         <property name="text">
+          <string>1234</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_StartStop">
+         <property name="text">
+          <string>Открыть</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Система</string>
+    </property>
+    <addaction name="Database_Connect"/>
+    <addaction name="Logout"/>
+    <addaction name="Exit"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <action name="Database_Connect">
+   <property name="text">
+    <string>Подключение к базе данных</string>
+   </property>
+  </action>
+  <action name="Logout">
+   <property name="icon">
+    <iconset>
+     <normalon>:/resourse/exit_for_user.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Выйти из системы</string>
+   </property>
+  </action>
+  <action name="Exit">
+   <property name="icon">
+    <iconset>
+     <normalon>:/resourse/exit_from_program.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

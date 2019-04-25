@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resourse/exit_for_user.png</file>
+        <file>resourse/exit_from_program.png</file>
+        <file>resourse/login.png</file>
+        <file>resourse/search.png</file>
+        <file>resourse/train.png</file>
+        <file>resourse/user.png</file>
+        <file>resourse/ticket.png</file>
+        <file>resourse/about.png</file>
+        <file>resourse/train_settings.png</file>
+        <file>resourse/Carriage.png</file>
+        <file>resourse/train.ico</file>
+    </qresource>
+</RCC>
